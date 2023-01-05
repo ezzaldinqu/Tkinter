@@ -1,0 +1,13 @@
+from tkinter import *
+
+root = Tk()
+root.geometry('800x400')
+
+
+btn1 = Button(root,text='Click')
+btn1.grid(column=0,row=0)
+btn1 = Button(root,text='Click2')
+btn1.grid(column=0,row=1,columnspan=2)
+
+
+root.mainloop()
