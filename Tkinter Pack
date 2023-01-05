@@ -1,0 +1,14 @@
+from tkinter import *
+
+root = Tk()
+root.geometry('200x200')
+
+btn1 = Button(root,text='My Button')
+btn1.pack(side='left',anchor='nw',padx=10,pady=10)
+
+
+input1 = Entry(root,width=20)
+input1.pack(side='left',anchor='nw',padx=10,pady=10)
+
+
+root.mainloop()
