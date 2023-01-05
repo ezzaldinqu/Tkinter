@@ -1,21 +1,22 @@
+import tkinter.messagebox
 from tkinter import *
 import webbrowser
-def exx():
-    return exit()
-def myfunc():
-    link = mytxt.get()
-    webbrowser.open(link)
-    exx()
-    return 50
-myframe = Tk()
-mylbl = Label(myframe,text='Go to Google')
-myframe.title('My first App')
-myframe.geometry('500x300')
-mybtn = Button(myframe,text='Insert Data',fg='blue',bg='pink',font='Arial 12 bold',padx=50,pady=30,command=myfunc)
-btn2 = Button(myframe,text='Exit',font='Tahoma 25',command=exit)
-mytxt = Entry()
-mybtn.pack(side=LEFT)
-mytxt.pack()
-mylbl.pack(side=LEFT)
-btn2.pack(side=LEFT)
-myframe.mainloop()
+
+
+def getlink():
+    link = txt.get()
+    if link == '':
+        tkinter.messagebox.showinfo(title='Error', message='Enter the Data')
+    else:
+        webbrowser.open(link)
+
+frm = Tk()
+frm.geometry('500x300')
+btn1 = Button(text='Click Me',command=getlink)
+btn1.pack()
+txt = Entry()
+txt.pack()
+
+
+
+frm.mainloop()
