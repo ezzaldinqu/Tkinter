@@ -2,12 +2,15 @@ from tkinter import *
 
 root = Tk()
 root.geometry('800x400')
-
+root.resizable(0,0)
+root.eval('tk::PlaceWindow . center')
 
 btn1 = Button(root,text='Click')
 btn1.grid(column=0,row=0)
-btn1 = Button(root,text='Click2')
-btn1.grid(column=0,row=1,columnspan=2)
+btn3 = Button(root,text='Click3')
+btn3.grid(column=1,row=0)
+btn2 = Button(root,text='Click2')
+btn2.grid(column=0,row=2,columnspan=2,ipadx=20,ipady=2)
 
 
 root.mainloop()
