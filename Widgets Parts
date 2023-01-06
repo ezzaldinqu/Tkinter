@@ -1,0 +1,51 @@
+import tkinter
+from tkinter import *
+# The main window
+root = Tk()
+root.focus()
+root.geometry('600x400')
+# Button
+btn1 = Button(root,text='Click',fg='black',bg='yellow')
+btn1.pack()
+# Label
+lbl1 = Label(root,text='Label')
+lbl1.pack()
+# Data Entry one line
+entr = Entry(root)
+entr.pack()
+# Long text multiple line
+txt = Text(root,width=20,height=10)
+
+txt.pack()
+# radio button with a group
+# define group for the result of radiobuttone
+radioGroup = StringVar()
+
+rdio1 = Radiobutton(root,text='Option1',variable=radioGroup,value='Option1')
+rdio1.select()
+rdio1.pack()
+rdio2 = Radiobutton(root,text='Option2',variable=radioGroup,value='Option2')
+rdio2.pack()
+# create button to check the value in the radio buttons
+def mychoice():
+    txt.delete(1.0,tkinter.END)
+    txt.insert(tkinter.END,radioGroup.get())
+    txt.config(bg='blue')
+btn5 = Button(root,text='Click to see',fg='white',bg='red',command=mychoice)
+btn5.pack()
+
+# create check button check list
+chklst1 = Checkbutton(root,text='Check1')
+chklst1.select()
+chklst1.pack()
+chklst2 = Checkbutton(root,text='Check1')
+chklst2.pack()
+
+# Create the list box
+
+lstbox = Listbox(root)
+lstbox.insert(1,'01')
+lstbox.insert(1,'02')
+lstbox.insert(1,'03')
+lstbox.pack()
+root.mainloop()
