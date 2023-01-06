@@ -1,0 +1,51 @@
+from tkinter import *
+from tkinter import ttk
+from tkinter import filedialog,messagebox
+import tkinter as tk
+
+def hello():
+    messagebox.showinfo('Hello','Hello ' + entry.get())
+
+def myfile():
+    entry.insert(0,filedialog.askopenfilename(title='Open your file'))
+
+root = Tk()
+root.geometry('600x300')
+btn1 = ttk.Button(root,text='Click Me',command=myfile)
+btn1.pack(side='left')
+btn2 = Button(root,text='Click Me Old',command=hello)
+btn2.pack(side='left')
+optn1 = Radiobutton(root,text='Radio Old')
+optn1.pack(side='left',anchor='nw')
+optn2 = ttk.Radiobutton(root,text='Radio New')
+optn2.pack(side='left',fill='both',anchor='nw')
+cmbobox = ttk.Combobox(root,values=['Ahmad','Mohamad','Ezzeddin'])
+cmbobox.set('Ahmad')
+cmbobox.pack()
+entry = ttk.Entry()
+entry.pack()
+
+import tkinter as tk
+import tkcalendar as ttk
+
+class DatePicker(tk.Frame):
+    def __init__(self, parent, *args, **kwargs):
+        tk.Frame.__init__(self, parent, *args, **kwargs)
+
+        # Create the calendar widget
+        self.calendar = ttk.Calendar(self)
+        self.calendar.pack(fill='both', expand=True)
+
+        # Create the 'OK' button
+        self.ok_button = tk.Button(self, text="OK", command=self.on_ok)
+        self.ok_button.pack()
+
+    def on_ok(self):
+        # Get the selected date and print it
+        selected_date = self.calendar.selection_get()
+        print(selected_date)
+
+date_picker = DatePicker(root)
+date_picker.pack()
+
+root.mainloop()
